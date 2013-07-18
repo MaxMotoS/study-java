@@ -8,7 +8,7 @@ package org.hexlet.java;
  * To change this template use File | Settings | File Templates.
  */
 public class QuadraticEquation {
-    private double a;
+/*   private double a;
     private double b;
     private double c;
 
@@ -55,5 +55,5 @@ public class QuadraticEquation {
             return solution;
         }
         return null;
-    }
+    }  */
 }

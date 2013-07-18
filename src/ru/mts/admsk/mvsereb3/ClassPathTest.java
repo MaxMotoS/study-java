@@ -1,1 +1,1 @@
-package ru.mts.admsk.mvsereb3;public class ClassPathTest {	public String name = "Hello ClassPath";}
+package ru.mts.admsk.mvsereb3;public class ClassPathTest {//	public String name = "Hello ClassPath";}
