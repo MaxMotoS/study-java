@@ -8,3 +8,6 @@
 # Folder #
 tmp/
 out/
+
+# IDEA #
+workspace.xml

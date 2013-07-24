@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b09595df-ec5a-455c-918b-233da19f9cb3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TestConnectVK.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Server.java" afterPath="$PROJECT_DIR$/src/Server.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="study-java.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b09595df-ec5a-455c-918b-233da19f9cb3" time="1374690344318" ignored="false" />
+    <file path="/Dummy.txt" changelist="b09595df-ec5a-455c-918b-233da19f9cb3" time="1374703950362" ignored="false" />
     <file path="/TestInput.java" changelist="b09595df-ec5a-455c-918b-233da19f9cb3" time="1373377045931" ignored="false" />
     <file path="/TestClass.java" changelist="b09595df-ec5a-455c-918b-233da19f9cb3" time="1374132620570" ignored="false" />
     <file path="/Main.java" changelist="b09595df-ec5a-455c-918b-233da19f9cb3" time="1374343184538" ignored="false" />
@@ -19,6 +18,7 @@
     <file path="/Server2.java" changelist="b09595df-ec5a-455c-918b-233da19f9cb3" time="1374441991420" ignored="false" />
     <file path="/TicTacToe.java" changelist="b09595df-ec5a-455c-918b-233da19f9cb3" time="1374690276968" ignored="false" />
     <file path="/TestConnectVK.java" changelist="b09595df-ec5a-455c-918b-233da19f9cb3" time="1374700545845" ignored="false" />
+    <file path="/.gitignore" changelist="b09595df-ec5a-455c-918b-233da19f9cb3" time="1374704033740" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,13 +84,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestConnectVK.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TestConnectVK.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestConnectVK.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="21" selection-start="884" selection-end="884" vertical-scroll-proportion="0.43820226">
+            <state line="25" column="21" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="8" selection-start="91" selection-end="91" vertical-scroll-proportion="0.35648996">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ru/mts/admsk/mvsereb3/PackageTest.java" />
         <option value="$PROJECT_DIR$/src/MaxTest.java" />
         <option value="$PROJECT_DIR$/src/max/MaxTest.java" />
         <option value="$PROJECT_DIR$/src/HelloWorld.java" />
@@ -138,6 +146,7 @@
         <option value="$PROJECT_DIR$/src/max/ttt/TicTacToe.java" />
         <option value="$PROJECT_DIR$/src/Server.java" />
         <option value="$PROJECT_DIR$/src/TestConnectVK.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -201,7 +210,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,12 +464,16 @@
       <created>1374690364065</created>
       <updated>1374690364066</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="first expirements with vk">
+      <created>1374703966010</created>
+      <updated>1374703966010</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1282" height="1004" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32748538" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -475,7 +488,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31523502" sideWeight="0.67017543" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31523502" sideWeight="0.67017543" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32982457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -526,7 +539,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify error" />
+    <option name="LAST_COMMIT_MESSAGE" value="first expirements with vk" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -543,6 +556,7 @@
     <MESSAGE value="Added Main class" />
     <MESSAGE value="Added Server2 class" />
     <MESSAGE value="modify error" />
+    <MESSAGE value="first expirements with vk" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -552,13 +566,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Server2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="26" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -645,10 +652,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestConnectVK.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="21" selection-start="884" selection-end="884" vertical-scroll-proportion="0.43820226">
+        <state line="25" column="21" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="8" selection-start="91" selection-end="91" vertical-scroll-proportion="0.35648996">
+          <folding />
         </state>
       </provider>
     </entry>
