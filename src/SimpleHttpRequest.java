@@ -29,11 +29,11 @@ public class SimpleHttpRequest {
         connection.connect();
 
         in = new DataInputStream(connection.getInputStream());
-
+/*
         while ((data = in.read()) != null) {
             System.out.println(data);
         }
-
+  */
         connection = null;
         serverAddress = null;
         in = null;

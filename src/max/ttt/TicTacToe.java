@@ -11,7 +11,7 @@ enum Cell {X, O, _}
 
 public class TicTacToe {
     private final static int SIZE_FIELD = 3;
-    private final static Cell DEFAULT_CELL = _;
+    private final static Cell DEFAULT_CELL = Cell._;
     private final static int FIRST_CHECK = 4;
 
     private int countMoves = 0;
