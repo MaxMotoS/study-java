@@ -18,7 +18,7 @@ public class Server2 {
     private ServerSocket serverSocket;
     private String line;
 
-    public void startServer(int newPort) {
+    public void startServer(int newPort) throws IOException {
         port = newPort;
 
         startServer();

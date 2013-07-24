@@ -30,7 +30,7 @@ public class SimpleHttpRequest {
 
         in = new DataInputStream(connection.getInputStream());
 
-        while ((data = in.readUTF()) != null) {
+        while ((data = in.read()) != null) {
             System.out.println(data);
         }
 
