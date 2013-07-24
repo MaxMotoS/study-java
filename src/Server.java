@@ -15,7 +15,7 @@ public class Server {
     }
 
     public static void main(String[] args) {
-        int port = Integer.parseInt(args[0]);
+        int port = 80;
         try {
             // открываем порт
             ServerSocket socketServer = new ServerSocket(port);
@@ -24,22 +24,18 @@ public class Server {
             Socket socket = socketServer.accept();
 
             InputStream sin = socket.getInputStream();
-            OutputStream sout = socket.getOutputStream();
+            //OutputStream sout = socket.getOutputStream();
 
             DataInputStream in = new DataInputStream(sin);
-            DataOutputStream out = new DataOutputStream(sout);
+            //DataOutputStream out = new DataOutputStream(sout);
 
-            String line = null;
-            line = in.readUTF();
-            System.out.println(line);
+            byte[] readData = null;
 
-            while(true) {
-                out.writeUTF("Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) Hello Client!!! :) ");
-                out.flush();
+            in.read(readData);
+
+            for (byte b : readData) {
+                System.out.print(String.format("%X ", b));
             }
-
-            //socketServer.close();
-            //System.out.println("Port " + port + " is closed");
 
         } catch (IOException e) {
             System.out.println("Port " + port + " isn't open");
