@@ -21,9 +21,24 @@ public class SHA1 {
     }
 
     public static void main(String[] args) {
-        byte[] sha1 = toSHA1(args[0].getBytes());
-        for (byte b : sha1) {
-            System.out.print(String.format("%X ", b));
+        if (args.length ==1) {
+            byte[] sha1 = toSHA1(args[0].getBytes());
+            for (byte b : sha1) {
+                System.out.print(String.format("%X ", b));
+            }
+        } else {
+            byte[] data = new byte[args.length];
+            for (int i = 0; i < args.length; i++) {
+                data[i] = (byte)Integer.parseInt(args[i], 16);
+            }
+            for (byte b : data) {
+                System.out.print(String.format("%X ", b));
+            }
+            System.out.println("\n");
+            byte[] sha1 = toSHA1(data);
+            for (byte b : sha1) {
+                System.out.print(String.format("%X ", b));
+            }
         }
     }
 }

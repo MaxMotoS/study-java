@@ -7,6 +7,7 @@
  */
 import java.io.*;
 import java.net.*;
+import java.util.Locale;
 
 public class Server {
 
@@ -15,30 +16,47 @@ public class Server {
     }
 
     public static void main(String[] args) {
-        int port = 80;
+        int port = 1702;
         try {
             // открываем порт
             ServerSocket socketServer = new ServerSocket(port);
 
-            // переводим в режим простлушивания порта
-            Socket socket = socketServer.accept();
+            while(true){
+                // переводим в режим простлушивания порта
+                Socket socket = socketServer.accept();
 
-            InputStream sin = socket.getInputStream();
-            //OutputStream sout = socket.getOutputStream();
+                // получаем входной поток
+                InputStream in = socket.getInputStream();
 
-            DataInputStream in = new DataInputStream(sin);
-            //DataOutputStream out = new DataOutputStream(sout);
+                // читаем входной поток и отображаем его на экране
+                byte[] b = new byte[4096];
 
-            byte[] readData = null;
-
-            in.read(readData);
-
-            for (byte b : readData) {
-                System.out.print(String.format("%X ", b));
+                while (true) {
+                    int r;
+                    r = in.read(b);
+                    if (r > 0) {
+                        showReadData(b, System.out, r);
+                        socket.close();
+                        break;
+                    }
+                }
             }
-
         } catch (IOException e) {
-            System.out.println("Port " + port + " isn't open");
+            e.printStackTrace();
         }
+    }
+
+    public static void showReadData(byte[] data, PrintStream out, int r) {
+        int offsetData = 2;
+        int byteInLine = 16;
+
+        out.print(String.format("Header:\t%X\nLength:\t%X", data[0], data[1]));
+        for (int i = offsetData; i < r; i++) {
+            if (((i - offsetData) % byteInLine) == 0) {
+                out.print(String.format("\n%#06x\t| ", (int) ((i - offsetData) / byteInLine)));
+            }
+            out.print(String.format("%#04x ", data[i]));
+        }
+        out.println();
     }
 }

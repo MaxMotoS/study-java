@@ -19,8 +19,8 @@ public class TestConnectVK {
             System.out.println(timestamp/1000 + "\t" + String.format("%X", timestamp/1000));
             //System.out.println(timestamp<<32 + String.format("%X", (timestamp<<32)));
 
-            Socket socket = new Socket("95.142.192.65", 80);
-            socket.setSoTimeout(0);
+            Socket socket = new Socket("127.0.0.1", 1702);
+            socket.setSoTimeout(10);
             System.out.print("Connected to 95.142.192.65:80");
 
             OutputStream out = socket.getOutputStream();
@@ -32,9 +32,12 @@ public class TestConnectVK {
                     0x66, (byte) 0xB3, 0x01, (byte) 0xA4, (byte) 0x8F, (byte) 0xEC, (byte) 0xE2, (byte) 0xFC};
 
             out.write(data);
+          //  out.flush();
+
+            out.close();
 
             // читаем ответ сервера, одновременно сливая его в открытый файл
-            int r = 1;
+/*            int r = 1;
             while(r > 0)
             {
                 r = in.read(data);
@@ -42,7 +45,7 @@ public class TestConnectVK {
                     System.out.print(String.format("%X ", b));
                 }
             }
-
+*/
             /*byte[] readData = null;
 
             inData.read(readData);
