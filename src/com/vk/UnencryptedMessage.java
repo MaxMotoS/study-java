@@ -13,7 +13,7 @@ import java.nio.ByteOrder;
  * Time: 23:59
  * To change this template use File | Settings | File Templates.
  */
-public class UnencryptedMessage extends Message {
+public class UnencryptedMessage  {
     private final static byte HEAD_MESSAGE = (byte)0xEF;
 
     private byte[] messageLength;

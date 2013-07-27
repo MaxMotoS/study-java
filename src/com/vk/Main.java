@@ -2,6 +2,7 @@ package com.vk;
 
 import java.io.*;
 import java.net.Socket;
+import java.nio.ByteBuffer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,64 +13,39 @@ import java.net.Socket;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
+        ByteBuffer buffer = ByteBuffer.allocate(16);
+
         byte[] nonce = {
-                (byte) 0x60, (byte) 0x46, (byte) 0x97, (byte) 0x78
+                (byte) 0x78, (byte) 0x97, (byte) 0x46, (byte) 0x60
         };
 
-        Socket socket = new Socket("95.142.192.65", 80);
-        socket.setSoTimeout(600000);
-        System.out.println("Connected to 95.142.192.65:80");
-
-        OutputStream out = socket.getOutputStream();
-        InputStream in = socket.getInputStream();
-
-        UnencryptedMessage message = new UnencryptedMessage(nonce);
-        byte[] byteMessage = message.sendMessage(out);
-        out.flush();
-
-        showReadData2(byteMessage, System.out, byteMessage.length );
-
-
-        // читаем ответ сервера, одновременно сливая его в открытый файл
-        byte[] b = new byte[4096];
-        while (true) {
-            int r;
-            r = in.read(b);
-            if (r > 0) {
-                showReadData(b, System.out, r);
-                socket.close();
-                break;
-            }
+        for (int i = 0; i < 16; i++) {
+            buffer.put((byte)(Math.random()*127));
         }
+        byte[] nonceData = buffer.array();
 
+        Session session = new Session();
+        session.init(80);
 
+        Message message = new Message();
+        message.setMessageData(ByteBuffer.allocate(nonce.length + nonceData.length).put(nonce).put(nonceData).array());
+
+        session.request(message);
+        byte[] response = session.response();
+        session.close();
+
+//        show(response);
     }
 
-    public static void showReadData(byte[] data, PrintStream out, int r) {
-        int offsetData = 1;
+    public static void show(byte[] data) {
         int byteInLine = 16;
 
-        out.print(String.format("Length:\t%X", data[0]));
-        for (int i = offsetData; i <= r; i++) {
-            if (((i - offsetData) % byteInLine) == 0) {
-                out.print(String.format("\n%#06x\t| ", (int) ((i - offsetData) / byteInLine)));
+        for (int i = 0; i <= data.length; i++) {
+            if (((i) % byteInLine) == 0) {
+                System.out.print(String.format("\n%#06x\t| ", (int) ((i) / byteInLine)));
             }
-            out.print(String.format("%#04x ", data[i]));
+            System.out.print(String.format("%#04x ", data[i]));
         }
-        out.println();
-    }
-
-    public static void showReadData2(byte[] data, PrintStream out, int r) {
-        int offsetData = 2;
-        int byteInLine = 16;
-
-        out.print(String.format("Header:\t%X\nLength:\t%X", data[0], data[1]));
-        for (int i = offsetData; i < r; i++) {
-            if (((i - offsetData) % byteInLine) == 0) {
-                out.print(String.format("\n%#06x\t| ", (int) ((i - offsetData) / byteInLine)));
-            }
-            out.print(String.format("%#04x ", data[i]));
-        }
-        out.println();
+        System.out.println();
     }
 }
