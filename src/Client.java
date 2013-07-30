@@ -12,18 +12,20 @@ import java.net.UnknownHostException;
  */
 public class Client {
     public static void main(String[] args) throws UnknownHostException {
-        int port = Integer.parseInt(args[1]);
-        String ipAddress = args[0];
+        //int port = Integer.parseInt(args[1]);
+        //String ipAddress = args[0];
+        int port = 1702;
+        String ipAddress = "127.0.0.1";
 
         InetAddress inetAddress = InetAddress.getByName(ipAddress);
 
         try {
             Socket socket = new Socket(inetAddress, port);
 
-            InputStream sin = socket.getInputStream();
+//            InputStream sin = socket.getInputStream();
             OutputStream sout = socket.getOutputStream();
 
-            DataInputStream in = new DataInputStream(sin);
+//            DataInputStream in = new DataInputStream(sin);
             DataOutputStream out = new DataOutputStream(sout);
 
             BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
@@ -35,12 +37,12 @@ public class Client {
             out.writeUTF(line);
             out.flush();
 
-            line = in.readUTF();
-            System.out.println("Server response: " + line);
+//            line = in.readUTF();
+//            System.out.println("Server response: " + line);
 
-            while(true) {
-                line = in.readUTF();
-            }
+//            while(true) {
+//                line = in.readUTF();
+//            }
 
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
